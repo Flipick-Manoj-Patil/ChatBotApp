@@ -1,0 +1,58 @@
+<div class="grow shrink-0 basis-[0%] w-full max-w-full relative border-t border-[#DBDBDB] bg-white">         
+    <form [formGroup]="chatbotForm"> 
+        <div class="h-content-height px-5">
+            <div class="h-full flex flex-col"> 
+                <div class="grow shrink-0 basis-[0%] h-full max-h-full flex flex-col bg-white">            
+                    <div class="message-container pt-5 pb-1 px-[10px] grow shrink-0 basis-[0%]">
+                        <div class="space-y-5 overflow-x-hidden overflow-y-auto h-[calc(calc(100*var(--vh))-(var(--header-height)+90px))]">
+                           <ng-container *ngFor="let item of chatList"> 
+                                <div class="prompt-send flex justify-end items-start gap-4">
+                                    <!-- <p class="text-lg text-[#333] rounded-l-[10px] bg-[#CDFFA2] py-2.5 px-5">{{item.promptSend}}</p> -->
+                                    <p class="text-[#333] rounded-l-[10px] bg-[#CDFFA2] py-2 px-5 max-w-[80%]" [innerHTML]="item.question"></p>
+                                    <div class="grow-0 shrink-0 basis-auto w-[46px] h-[46px]">
+                                        <img src="assets/user.svg" alt="" class="w-full" />
+                                    </div>
+                                </div>
+                                <div class="message-recevied flex justify-start items-start gap-4">
+                                    <div class="grow-0 shrink-0 basis-auto w-[46px] h-[46px]">
+                                        <img src="assets/bot.png" alt="" class="w-full" />
+                                    </div>                              
+                                    <p class="text-lg text-[#333] rounded-r-[10px] bg-[#E8E8E8] py-2.5 px-5 max-w-[80%]" [innerHTML]="item.answer | trustHtml"></p>
+                                </div>
+                             </ng-container> 
+                        </div>
+                    </div>
+                    <div class="input-box-container pt-1 pb-2 px-2.5 xl:px-[75px]">
+                        <div *ngIf="submitted && f['prompt'].errors">
+                            <div *ngIf="f['prompt'].errors['required']" class="text-sm text-red-500 my-1">Please enter prompt.</div>
+                        </div>           
+                        <div class="" *ngIf="submitted && chatbotError">
+                            <div class="text-sm text-red-500 my-1">
+                                {{ errorMessage }}
+                            </div>
+                        </div>
+                        <div class="relative h-[50px]">
+                            <textarea formControlName="prompt" name="prompt" class="prompt-box text-sm text-flp_accent w-full h-[50px] bg-white border border-[#707070] pl-[60px] py-1 pr-[60px] placeholder:text-[#97a3d6] focus:outline-flp_accent resize-none overflow-x-hidden overflow-y-auto" (keydown)="onKeyDown($event)"></textarea>
+                            <button type="button" (click)="query()" class="sent-btn absolute right-6 top-1/2 -translate-y-1/2 w-6 h-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26.289" height="26.289" viewBox="0 0 26.289 26.289" class="block w-6 h-6"><path id="location" d="M3.5,15.752a.694.694,0,0,1-.129-1.3L26.242,3.619a.694.694,0,0,1,.924.924L16.334,27.411a.694.694,0,0,1-1.3-.129l-2.306-9.225Z" transform="translate(-1.973 -2.522)" fill="none" stroke="#2953b3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            </button>
+                            <!-- <button type="button" class="w-8 h-5 absolute left-3 top-1/2 -translate-y-1/2" (click)="prePromptOpen()">
+                                <span class="bar w-full h-1 bg-[#254A75] rounded-sm absolute left-0 right-0 top-0"></span>
+                                <span class="bar w-full h-1 bg-[#254A75] rounded-sm absolute left-0 right-0 top-1/2 -translate-y-1/2"></span>
+                                <span class="bar w-full h-1 bg-[#254A75] rounded-sm absolute left-0 right-0 bottom-0"></span>
+                            </button> -->
+                            <!-- <div class="prompt-list bg-white rounded shadow-active-shadow border border-[#707070] p-4 overflow-hidden absolute left-3 bottom-3" [ngClass]="this.prePrompt==true?'show':'hide'">
+                                <ul class="space-y-2">
+                                    <li class="cursor-pointer" (click)="prePromptClose(item)" *ngFor="let item of promptList">{{item.promptAliase}}</li>
+                                </ul>
+                            </div> -->
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<app-popup #popup1 [isShowPopup]="popupConfig.isShowPopup" [hidden]="!popupConfig.isShowPopup">
+    <app-module-popup [hidden]="!isShowModulePopup"  (CloseEvent)="close($event)"></app-module-popup>
+</app-popup>

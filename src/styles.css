@@ -1,1 +1,346 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+:root {
+    --font-family-primary: 'Montserrat', sans-serif;
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --theme-color: #1D2858;
+    --theme-secondary-clr: #52BDB5;
+    --body-bg-color: #FFFFFF;
+    --text-color: #1D2858;
+    --text-secondary-color: #52BDB5;
+    --text-title: #D34D27;
+    --text-form: #696D6F;
+    --table-th-clr: #204877;
+    --top-banner: #fff;
+    --tab-bg-clr: #1D2858;
+    --tab-selected-bg-clr: #CFD1FA;
+    --tab-text-clr: #fff;
+    --tab-selected-text-clr: #333333;
+    --sidebar-bg-clr: #F7F7F7;
+    --sidebar-text-clr: #333333;
+    --sidebar-selected-bg: #CFD1FA;
+    --btn-primary-bg: #1D2858;
+    --btn-primary-hover-color: #1D2858;
+    --header-height: 68px;
+    --footer-height: 40px;
+} 
+
+body {
+    min-height: calc(100 * var(--vh));
+    min-height: -webkit-fill-available;
+}
+
+/* Theme Branding start */
+.discovery {
+    --font-family-primary: 'Roboto', sans-serif;
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --theme-color: #254A75;
+    --theme-secondary-clr: #52BDB5;
+    --body-bg-color: #2663A4;
+    --text-color: #254A75;
+    --text-secondary-color: #52BDB5;
+    --text-title: #D34D27;
+    --text-form: #696D6F;
+    --table-th-clr: #204877;
+    --top-banner: #fff;
+    --tab-bg-clr: #fff;
+    --tab-selected-bg-clr: var(--theme-secondary-clr);
+    --tab-text-clr: var(--theme-color);
+    --tab-selected-text-clr: #fff;
+    --sidebar-bg-clr: #4A698D;
+    --sidebar-text-clr: #fff;
+    --sidebar-selected-bg: #51BBB5;
+    --btn-primary-bg: #52BDB5;
+    --btn-primary-hover-color: #254A75;
+    --footer-text-clr: #fff;
+    --header-height: 68px;
+    --footer-height: 40px;
+}
+
+/* .artofwar {
+    --font-family-primary: 'Montserrat', sans-serif;
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --theme-color: #1D2858;
+    --theme-secondary-clr: #52BDB5;
+    --body-bg-color: #FFFFFF;
+    --text-color: #1D2858;
+    --text-secondary-color: #52BDB5;
+    --text-title: #D34D27;
+    --text-form: #696D6F;
+    --table-th-clr: #204877;
+    --top-banner: #fff;
+    --tab-bg-clr: #1D2858;
+    --tab-selected-bg-clr: #CFD1FA;
+    --tab-text-clr: #fff;
+    --tab-selected-text-clr: #333333;
+    --sidebar-bg-clr: #F7F7F7;
+    --sidebar-text-clr: #333333;
+    --sidebar-selected-bg: #CFD1FA;
+    --btn-primary-bg: #1D2858;
+    --btn-primary-hover-color: #1D2858;
+    --footer-text-clr: #1D2858;
+    --header-height: 68px;
+    --footer-height: 40px;
+} */
+
+.artofwar {
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --theme-color: #254A75;
+    --theme-secondary-clr: #52BDB5;
+    --body-bg-color: #2663A4;
+    --text-color: #254A75;
+    --text-secondary-color: #52BDB5;
+    --text-title: #D34D27;
+    --text-form: #696D6F;
+    --table-th-clr: #204877;
+    --top-banner: #fff;
+    --tab-bg-clr: #fff;
+    --tab-selected-bg-clr: var(--theme-secondary-clr);
+    --tab-text-clr: var(--theme-color);
+    --tab-selected-text-clr: #fff;
+    --sidebar-bg-clr: #4A698D;
+    --sidebar-text-clr: #fff;
+    --sidebar-selected-bg: #51BBB5;
+    --btn-primary-bg: #52BDB5;
+    --btn-primary-hover-color: #254A75;
+    --footer-text-clr: #fff;
+    --header-height: 68px;
+    --footer-height: 40px;
+}
+
+.marketupdate {
+    --font-family-primary: 'Roboto', sans-serif;
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --theme-color: #254A75;
+    --theme-secondary-clr: #52BDB5;
+    --body-bg-color: #2663A4;
+    --text-color: #254A75;
+    --text-secondary-color: #52BDB5;
+    --text-title: #D34D27;
+    --text-form: #696D6F;
+    --table-th-clr: #204877;
+    --top-banner: #fff;
+    --tab-bg-clr: #fff;
+    --tab-selected-bg-clr: var(--theme-secondary-clr);
+    --tab-text-clr: var(--theme-color);
+    --tab-selected-text-clr: #fff;
+    --sidebar-bg-clr: #4A698D;
+    --sidebar-text-clr: #fff;
+    --sidebar-selected-bg: #51BBB5;
+    --btn-primary-bg: #52BDB5;
+    --btn-primary-hover-color: #254A75;
+    --footer-text-clr: #fff;
+    --header-height: 68px;
+    --footer-height: 40px;
+}
+
+.demo-1 {
+    --font-family-primary: 'Montserrat', sans-serif;
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --theme-color: #1D2858;
+    --theme-secondary-clr: #52BDB5;
+    --body-bg-color: #FFFFFF;
+    --text-color: #1D2858;
+    --text-secondary-color: #52BDB5;
+    --text-title: #D34D27;
+    --text-form: #696D6F;
+    --table-th-clr: #204877;
+    --top-banner: #fff;
+    --tab-bg-clr: #1D2858;
+    --tab-selected-bg-clr: #CFD1FA;
+    --tab-text-clr: #fff;
+    --tab-selected-text-clr: #333333;
+    --sidebar-bg-clr: #F7F7F7;
+    --sidebar-text-clr: #333333;
+    --sidebar-selected-bg: #CFD1FA;
+    --btn-primary-bg: #1D2858;
+    --btn-primary-hover-color: #1D2858;
+    --footer-text-clr: #1D2858;
+    --header-height: 68px;
+    --footer-height: 40px;
+}
+
+.mentormatrix {
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --theme-color: #254A75;
+    --theme-secondary-clr: #52BDB5;
+    --body-bg-color: #2663A4;
+    --text-color: #254A75;
+    --text-secondary-color: #52BDB5;
+    --text-title: #D34D27;
+    --text-form: #696D6F;
+    --table-th-clr: #204877;
+    --top-banner: #fff;
+    --tab-bg-clr: #fff;
+    --tab-selected-bg-clr: var(--theme-secondary-clr);
+    --tab-text-clr: var(--theme-color);
+    --tab-selected-text-clr: #fff;
+    --sidebar-bg-clr: #4A698D;
+    --sidebar-text-clr: #fff;
+    --sidebar-selected-bg: #51BBB5;
+    --btn-primary-bg: #52BDB5;
+    --btn-primary-hover-color: #254A75;
+    --footer-text-clr: #fff;
+    --header-height: 68px;
+    --footer-height: 40px;
+}
+
+.mentormatrix1 {
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --theme-color: #254A75;
+    --theme-secondary-clr: #52BDB5;
+    --body-bg-color: #2663A4;
+    --text-color: #254A75;
+    --text-secondary-color: #52BDB5;
+    --text-title: #D34D27;
+    --text-form: #696D6F;
+    --table-th-clr: #204877;
+    --top-banner: #fff;
+    --tab-bg-clr: #fff;
+    --tab-selected-bg-clr: var(--theme-secondary-clr);
+    --tab-text-clr: var(--theme-color);
+    --tab-selected-text-clr: #fff;
+    --sidebar-bg-clr: #4A698D;
+    --sidebar-text-clr: #fff;
+    --sidebar-selected-bg: #51BBB5;
+    --btn-primary-bg: #52BDB5;
+    --btn-primary-hover-color: #254A75;
+    --footer-text-clr: #fff;
+    --header-height: 68px;
+    --footer-height: 40px;
+}
+
+.mentormatrix2 {
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --theme-color: #254A75;
+    --theme-secondary-clr: #52BDB5;
+    --body-bg-color: #2663A4;
+    --text-color: #254A75;
+    --text-secondary-color: #52BDB5;
+    --text-title: #D34D27;
+    --text-form: #696D6F;
+    --table-th-clr: #204877;
+    --top-banner: #fff;
+    --tab-bg-clr: #fff;
+    --tab-selected-bg-clr: var(--theme-secondary-clr);
+    --tab-text-clr: var(--theme-color);
+    --tab-selected-text-clr: #fff;
+    --sidebar-bg-clr: #4A698D;
+    --sidebar-text-clr: #fff;
+    --sidebar-selected-bg: #51BBB5;
+    --btn-primary-bg: #52BDB5;
+    --btn-primary-hover-color: #254A75;
+    --footer-text-clr: #fff;
+    --header-height: 68px;
+    --footer-height: 40px;
+}
+
+.mentormatrix3 {
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --theme-color: #254A75;
+    --theme-secondary-clr: #52BDB5;
+    --body-bg-color: #2663A4;
+    --text-color: #254A75;
+    --text-secondary-color: #52BDB5;
+    --text-title: #D34D27;
+    --text-form: #696D6F;
+    --table-th-clr: #204877;
+    --top-banner: #fff;
+    --tab-bg-clr: #fff;
+    --tab-selected-bg-clr: var(--theme-secondary-clr);
+    --tab-text-clr: var(--theme-color);
+    --tab-selected-text-clr: #fff;
+    --sidebar-bg-clr: #4A698D;
+    --sidebar-text-clr: #fff;
+    --sidebar-selected-bg: #51BBB5;
+    --btn-primary-bg: #52BDB5;
+    --btn-primary-hover-color: #254A75;
+    --footer-text-clr: #fff;
+    --header-height: 68px;
+    --footer-height: 40px;
+}
+.mentormatrix4 {
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --theme-color: #254A75;
+    --theme-secondary-clr: #52BDB5;
+    --body-bg-color: #2663A4;
+    --text-color: #254A75;
+    --text-secondary-color: #52BDB5;
+    --text-title: #D34D27;
+    --text-form: #696D6F;
+    --table-th-clr: #204877;
+    --top-banner: #fff;
+    --tab-bg-clr: #fff;
+    --tab-selected-bg-clr: var(--theme-secondary-clr);
+    --tab-text-clr: var(--theme-color);
+    --tab-selected-text-clr: #fff;
+    --sidebar-bg-clr: #4A698D;
+    --sidebar-text-clr: #fff;
+    --sidebar-selected-bg: #51BBB5;
+    --btn-primary-bg: #52BDB5;
+    --btn-primary-hover-color: #254A75;
+    --footer-text-clr: #fff;
+    --header-height: 68px;
+    --footer-height: 40px;
+}
+
+.mentormatrix5 {
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --theme-color: #254A75;
+    --theme-secondary-clr: #52BDB5;
+    --body-bg-color: #2663A4;
+    --text-color: #254A75;
+    --text-secondary-color: #52BDB5;
+    --text-title: #D34D27;
+    --text-form: #696D6F;
+    --table-th-clr: #204877;
+    --top-banner: #fff;
+    --tab-bg-clr: #fff;
+    --tab-selected-bg-clr: var(--theme-secondary-clr);
+    --tab-text-clr: var(--theme-color);
+    --tab-selected-text-clr: #fff;
+    --sidebar-bg-clr: #4A698D;
+    --sidebar-text-clr: #fff;
+    --sidebar-selected-bg: #51BBB5;
+    --btn-primary-bg: #52BDB5;
+    --btn-primary-hover-color: #254A75;
+    --footer-text-clr: #fff;
+    --header-height: 68px;
+    --footer-height: 40px;
+}
+/* Theme Branding end */
+
+.tooltip::before {
+    content: attr(data-tooltip);
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 10;
+    transform: translateX(-50%);
+    padding: 10px 10px;
+    background-color: var(--theme-secondary-clr);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+    border-radius: 4px;
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #fff;
+    white-space: normal;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.tooltip:hover::before {
+    opacity: 1;
+}
+
+
+select {
+    @apply appearance-none bg-no-repeat bg-[right_10px_center] bg-[url('/assets/chevron-down-double.svg')];
+}
+

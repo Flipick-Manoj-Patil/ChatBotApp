@@ -1,0 +1,7 @@
+.prompt-list.hide {
+    @apply opacity-0 invisible;
+}
+
+.prompt-list.show {
+    @apply opacity-100 visible;
+}

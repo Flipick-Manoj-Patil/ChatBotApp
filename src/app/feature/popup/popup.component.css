@@ -1,0 +1,11 @@
+.small {
+    @apply m-auto w-4/5 lg:w-[400px]
+}
+
+.large {
+    @apply m-auto w-4/5 lg:w-[1048px]
+}
+
+.full-width {
+    @apply w-full flex flex-col 
+}

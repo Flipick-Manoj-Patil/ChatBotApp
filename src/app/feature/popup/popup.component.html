@@ -1,0 +1,27 @@
+<div class="modal fixed inset-0 z-40 w-screen h-screen"  [class.popup-show]="config.isShowPopup" (ReturnMessage)="getReturnMessage($event)">
+    <div class="modal-dialog flex absolute inset-0 w-screen h-screen z-50 overflow-x-hidden overflow-y-auto pointer-events-none">
+      <div class="modal-content border botder-[#707070] rounded-[6px] shadow-active-shadow relative z-[45] pointer-events-auto" 
+       [ngClass]="{
+        'small':config.popupFor == 'small', 
+        'large': config.popupFor == 'large', 
+        'full-width':config.popupFor == 'fullWidth'}">     
+        <div class="modal-header relative rounded-t-[6px]">         
+          <button ID="btnClose" (click)="close()" class="btn-close absolute z-10 top-2.5 right-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                <g id="clear-circle" transform="translate(-2.408 -2.408)">
+                  <circle id="Ellipse_5" data-name="Ellipse 5" cx="15" cy="15" r="15" transform="translate(2.408 2.408)"/>
+                  <path id="Path_12" data-name="Path 12" d="M9,9l9.605,9.605" transform="translate(3.605 3.605)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <path id="Path_13" data-name="Path 13" d="M18.605,9,9,18.605" transform="translate(3.605 3.605)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <circle id="Ellipse_4" data-name="Ellipse 4" cx="14" cy="14" r="14" transform="translate(3.408 3.408)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                </g>
+              </svg>
+          </button>
+          <h3 *ngIf="config.isShowHeaderText" class="text-xl text-white bg-flp_accent truncate pr-12 pl-5 py-2.5 rounded-t-[6px]" title="{{config.header}}">{{config.header}}</h3>         
+        </div>            
+        <div class="modal-body bg-white rounded-b-[6px]">
+            <ng-content></ng-content>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay absolute inset-0 w-full h-screen z-40 bg-white/80 backdrop-blur-sm" (click)="close()"></div>
+</div>
